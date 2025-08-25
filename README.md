@@ -60,13 +60,44 @@ The database is designed using PostgreSQL to ensure data integrity and support c
 * A Booking belongs to one Property and one User (Many-to-One).
 * A Payment is linked to one Booking (One-to-One).
 ## Feature Breakdown
-### 1. User Management
+#### 1. User Management
 Allows users to register, log in, and manage their profiles. This feature ensures secure authentication, role-based access (e.g., guest or host), and provides a personalized experience for each user.
-###2. Property Management
+#### 2. Property Management
 Enables hosts to create, update, and delete property listings. Users can browse detailed property information, including descriptions, photos, pricing, and availability, making it easy to manage and showcase listings.
-### 3. Booking System
+#### 3. Booking System
 Facilitates booking and reservation management for guests and hosts. Users can check availability, book properties for specific dates, and receive confirmation, while hosts can track upcoming reservations.
-### 4. Reviews & Ratings
+#### 4. Reviews & Ratings
 Allows guests to leave reviews and rate properties they have stayed in. This feature helps maintain transparency, builds trust among users, and assists hosts in improving their services.
-### 5. Payments & Transactions
+#### 5. Payments & Transactions
 Manages secure payment processing for bookings. Users can pay for reservations online, and the system tracks payment status, ensuring safe and reliable financial transactions.
+
+## API Security
+Securing backend APIs is critical to protect user data, ensure privacy, and maintain trust in the application. The Airbnb Clone project implements the following key security measures:
+#### 1. Authentication
+Ensures that only registered users can access the application by requiring secure login credentials (e.g., email and password with hashing). Authentication protects sensitive user information and prevents unauthorized access to accounts.
+#### 2. Authorization
+Controls what each user can do based on their role (e.g., guest, host, admin). Authorization ensures that users can only perform actions they are permitted to, such as only allowing hosts to manage their own properties or guests to manage their bookings.
+#### 3. Rate Limiting
+Prevents abuse of APIs by limiting the number of requests a user or IP can make in a certain time. Rate limiting protects the system from brute-force attacks, DDoS attacks, and ensures fair usage of resources.
+#### 4. Data Validation & Sanitization
+All incoming data is validated and sanitized to prevent malicious input, such as SQL injection or cross-site scripting (XSS). This ensures the integrity of the database and keeps the application secure.
+#### 5. Secure Payments
+Payment-related endpoints are secured using encryption and secure protocols to protect financial transactions. This prevents theft of payment details and ensures safe booking operations.
+## CI/CD Pipeline
+#### What is CI/CD?
+CI/CD (Continuous Integration and Continuous Deployment) is a development practice that automates the process of building, testing, and deploying applications.  
+
+Continuous Integration (CI): Ensures that new code changes are automatically tested and integrated into the main branch without breaking the system.  
+
+Continuous Deployment (CD): Automates the release of applications to production environments after passing tests, ensuring fast and reliable delivery.  
+
+#### Why is CI/CD Important for this Project?
+For the Airbnb Clone project, CI/CD pipelines help:
+* Maintain Code Quality: By running automated tests on every commit.
+* Reduce Deployment Errors: Automating the build and release process prevents manual mistakes.
+* Speed Up Development: Faster feedback loops enable quick bug fixes and feature releases.
+* Ensure Consistency: Every environment (development, staging, production) is set up consistently using automation.
+#### Tools Used
+* GitHub Actions: For setting up automated workflows like testing, linting, and deployment.
+* Docker: To containerize the application for consistent environments across development and production.
+* PostgreSQL (Dockerized): For managing the database in different environments.
