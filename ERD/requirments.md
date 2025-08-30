@@ -2,4 +2,4 @@
 
 Below is the ER diagram for the Airbnb database:
 
-![Airbnb ER Diagram](airbnb-clone-project/ERD/ER Diagram.png)
+![Airbnb ER Diagram](ER_Diagram.png)
